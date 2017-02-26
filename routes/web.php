@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::delete('/users/delete','HomeController@deleteUser');
 Route::post('/users/restore','HomeController@restoreUser');
+Route::get('profile/{id}','HomeController@profile');

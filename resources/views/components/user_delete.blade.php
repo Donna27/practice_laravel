@@ -2,6 +2,7 @@
                         @foreach ($types as $user)
                         <div class = "well">
                             <span>{{$user->name}} {{$user->email}}</span>
+
                              <form method="post" action = "/users/restore">
                                 {{csrf_field()}}
                                 <!--<input type="hidden" name="_method" value="delete"> -->

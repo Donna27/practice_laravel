@@ -8,7 +8,9 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
+                    <h1>Users Active</h1>
                     @include('components.user_list',['users','$users']);
+                    <h1>List of Users deleted</h1>
                     @include('components.user_delete',['types','$types'])
             </div>
         </div>

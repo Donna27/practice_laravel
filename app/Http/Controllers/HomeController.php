@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Model\F_national;
 class HomeController extends Controller
 {
     /**
@@ -27,6 +28,7 @@ class HomeController extends Controller
         $users  = User::get();
         // dd($users );
         $test = User::onlyTrashed()->get();
+        
         return view('home',['users' => $users ]
                           ,['types' => $test ]
                 );
@@ -45,5 +47,13 @@ class HomeController extends Controller
             ->restore();
       
       return back();
+    }
+    public function profile($id){
+        $user = User::find($id);
+        $national = F_national::get();
+        // dd($user);
+        return view('profile',['user'=>$user
+                                ,'national'=>$national
+                                ]);
     }
 }

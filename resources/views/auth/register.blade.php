@@ -79,6 +79,17 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="national" class="col-md-4 control-label">Nalionality</label>
+                            <div class="col-md-6">
+                                <select name = "national" class = "form-control">
+                                    <option value="">--เลือก--</option>
+                                @foreach ($national as $nation)                               
+                                    <option value="{{$nation->id}}">{{$nation->national_name}}</option>
+                                @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register
