@@ -37,5 +37,13 @@ class HomeController extends Controller
       User::find($id)->delete();
       return back();
     }
-   
+    public function restoreUser(Request $request)
+    {
+      $id = $request->id;
+      User::withTrashed()
+            ->where('id', $id)
+            ->restore();
+      
+      return back();
+    }
 }
