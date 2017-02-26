@@ -28,4 +28,10 @@ class HomeController extends Controller
         // dd($users );
         return view('home',['users' => $users ]);
     }
+    public function deleteUser (Request $request)
+    {
+      $id = $request->id;
+      User::find($id)->delete();
+      return back();
+    }
 }
