@@ -51,6 +51,7 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'pid'   => 'required|max:13|unique:users|min:13'
         ]);
     }
 
@@ -66,6 +67,11 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'pid'  => $data['pid'],
+            'gender'  => $data['gender'],
+            //''  => $data[''],
+            //''  => $data[''],
+
         ]);
     }
 }
