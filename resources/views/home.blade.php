@@ -8,19 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <div class = 'row'>
-                        @foreach ($users as $user)
-                        <div class = "well">
-                            <span>{{$user->name}} {{$user->email}}</span>
-                            <form method="post" action = "/users/delete">
-                                {{csrf_field()}}
-                                <input type="hidden" name="_method" value="delete">
-                                <input type="hidden" name="id" value="{{$user->id}}">
-                                <input type="submit" class = "btn btn-danger" value="Delete">
-                            </form>
-                        </div>
-                        @endforeach
-                </div>
+                    @include('components.user_list',['users','$users']);
+                    @include('components.user_delete',['types','$types'])
             </div>
         </div>
     </div>

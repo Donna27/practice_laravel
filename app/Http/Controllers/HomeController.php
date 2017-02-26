@@ -26,7 +26,10 @@ class HomeController extends Controller
     {
         $users  = User::get();
         // dd($users );
-        return view('home',['users' => $users ]);
+        $test = User::onlyTrashed()->get();
+        return view('home',['users' => $users ]
+                          ,['types' => $test ]
+                );
     }
     public function deleteUser (Request $request)
     {
@@ -34,4 +37,5 @@ class HomeController extends Controller
       User::find($id)->delete();
       return back();
     }
+   
 }
