@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 class F_national extends Model
 {
-    protected $table = "F_national";
+    protected $table = "f_national";
     protected $fillable=[
         'national_name'
     ];

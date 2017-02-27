@@ -35,5 +35,10 @@ class User extends Authenticatable
     {
       return $this->belongsTo(F_national::class, 'national','id');
     }
-    
+    /**public function setSettingsAddressAttribute($value) {
+        $this->attributes['address_desc'] = json_encode($value);
+    }**/
+    protected $casts = [
+        'address' => 'array'
+    ];
 }

@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
@@ -19,6 +19,11 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <!--<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>-->
+  <!--<script src="/jquery-1.12.4.js"></script>-->
 </head>
 <body>
     <div id="app">

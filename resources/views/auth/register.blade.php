@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row">
@@ -7,7 +6,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    <form id="regist_form" class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -89,9 +88,16 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="form-group input_fields_wrap">
+                            <label for="address"  class="col-md-4 control-label" >Address</label>
+                            <div class="col-md-6">
+                                <input type="button"  class="add_field_button" value="Add More Address">
+                                <input id="address_desc[]" type="text" class="form-control" name="address_desc[]" required>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button id="register_submit" type="submit" class="btn btn-primary">
                                     Register
                                 </button>
                             </div>
@@ -103,3 +109,5 @@
     </div>
 </div>
 @endsection
+<script src="/jquery-1.12.4.js"></script>
+<script src="/js/addAddress.js"></script>

@@ -67,6 +67,9 @@ class RegisterController extends Controller
     {
         // dd($data);
         $data['password'] = bcrypt($data['password']);
+        $data['address']=json_encode(['address_desc',$data['address_desc']]);;
+        // dd($data['address']);
+        // dd($data);
         return User::create($data);
       /*  return User::create([
             'name' => $data['name'],
